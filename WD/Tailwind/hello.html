@@ -1,0 +1,219 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="card">Hello</div>
+
+    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+      Hello king of digital world!
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Tailwind Project</title>
+  <!-- Tailwind CDN (JIT enabled by default) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#f0f9ff', 100:'#e0f2fe', 500:'#0ea5e9', 600:'#0284c7', 900:'#0c4a6e' },
+            surface: { light:'#ffffff', dark:'#0f172a' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          animation: { 'fade-in': 'fadeIn 0.5s ease-out', 'slide-up': 'slideUp 0.4s ease-out' },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center text-white font-bold">T</div>
+          <span class="text-xl font-bold tracking-tight">Tailwind<span class="text-brand-500">Pro</span></span>
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" class="text-sm font-medium hover:text-brand-500 transition-colors">Features</a>
+          <a href="#" class="text-sm font-medium hover:text-brand-500 transition-colors">Pricing</a>
+          <a href="#" class="text-sm font-medium hover:text-brand-500 transition-colors">Docs</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle Dark Mode">
+            🌙
+          </button>
+          <button class="hidden sm:inline-flex px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center animate-fade-in">
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-50 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 mb-4 border border-brand-200 dark:border-brand-800">
+      v3.4+ Compatible • Production Ready
+    </span>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+      Build <span class="bg-gradient-to-r from-brand-500 to-purple-600 bg-clip-text text-transparent">Modern UIs</span><br class="hidden sm:block" /> at Lightning Speed
+    </h1>
+    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+      Responsive, accessible, and highly optimized. Uses advanced Tailwind patterns including dark mode, animations, grid/flex, forms, and component architecture.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <button class="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 focus:ring-4 focus:ring-brand-300 dark:focus:ring-brand-800">
+        Start Free Trial
+      </button>
+      <button class="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-semibold rounded-xl border border-gray-300 dark:border-gray-600 hover:border-brand-500 dark:hover:border-brand-500 hover:text-brand-500 transition-all focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">
+        View Documentation →
+      </button>
+    </div>
+  </header>
+
+  <!-- Feature Grid -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Developers Love It</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700 group">
+          <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 text-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">⚡</div>
+          <h3 class="text-xl font-semibold mb-2">JIT Compiler</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Generate only the CSS you use. Zero bloat, instant reloads.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700 group">
+          <div class="w-12 h-12 bg-green-100 dark:bg-green-900/40 text-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">🌗</div>
+          <h3 class="text-xl font-semibold mb-2">Native Dark Mode</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">`dark:` variant with class strategy. Seamless theme switching.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700 group">
+          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 text-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">📱</div>
+          <h3 class="text-xl font-semibold mb-2">Mobile-First</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">`sm:`, `md:`, `lg:`, `xl:`, `2xl:` breakpoints out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-6">Quick Setup Form</h2>
+      <form class="space-y-5" onsubmit="event.preventDefault(); alert('Form Submitted!');">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Full Name</label>
+            <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all placeholder-gray-400" placeholder="John Doe">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all placeholder-gray-400" placeholder="john@example.com">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Role</label>
+          <select class="w-full px-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+            <option>Frontend Developer</option>
+            <option>UI/UX Designer</option>
+            <option>Full Stack Engineer</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="terms" class="w-4 h-4 text-brand-500 border-gray-300 rounded focus:ring-brand-500">
+          <label for="terms" class="text-sm text-gray-600 dark:text-gray-400">I agree to the terms & privacy policy</label>
+        </div>
+        <button type="submit" class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all focus:ring-4 focus:ring-brand-300 disabled:opacity-50 disabled:cursor-not-allowed">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <h4 class="text-white font-semibold mb-3">Product</h4>
+        <ul class="space-y-2"><li><a href="#" class="hover:text-brand-400 transition-colors">Features</a></li><li><a href="#" class="hover:text-brand-400 transition-colors">Pricing</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Resources</h4>
+        <ul class="space-y-2"><li><a href="#" class="hover:text-brand-400 transition-colors">Docs</a></li><li><a href="#" class="hover:text-brand-400 transition-colors">Blog</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Company</h4>
+        <ul class="space-y-2"><li><a href="#" class="hover:text-brand-400 transition-colors">About</a></li><li><a href="#" class="hover:text-brand-400 transition-colors">Careers</a></li></ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-3">Connect</h4>
+        <ul class="space-y-2"><li><a href="#" class="hover:text-brand-400 transition-colors">GitHub</a></li><li><a href="#" class="hover:text-brand-400 transition-colors">Twitter</a></li></ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+      © 2026 TailwindPro. Built with Tailwind CSS v3.4+.
+    </div>
+  </footer>
+
+  <!-- Dark Mode Logic -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    
+    // Check saved preference or system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      themeToggle.textContent = '☀️';
+    } else {
+      html.classList.remove('dark');
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+        themeToggle.textContent = '🌙';
+      } else {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+        themeToggle.textContent = '☀️';
+      }
+    });
+  </script>
+</body>
+</html>
