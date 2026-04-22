@@ -1,0 +1,12 @@
+.BannerStyle{
+        
+        min-height: 100vh;
+        padding: 60px 0;
+    
+}
+
+.textStyle{
+        color: rgb(147, 11, 211);
+         font-weight: bold;
+          font-size: 1.2em;
+    }

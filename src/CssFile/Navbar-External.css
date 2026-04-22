@@ -1,0 +1,13 @@
+#img1{
+        
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    
+}
+
+#alignContent{
+        display: flex;
+        justify-content: flex-end;   
+        width: 100%;
+}
