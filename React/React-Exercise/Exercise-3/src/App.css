@@ -1,0 +1,36 @@
+
+.magnetic{
+  transform: translateY(-5px) scale(1.02);
+  text-shadow: 0 5px 15px rgb(223, 8, 19);
+  font-weight: lighter;
+  font-style:italic;
+}
+
+
+.professional-card {
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.professional-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(231, 228, 18, 0.37) !important;
+}
+
+.professional-card img {
+  transition: transform 0.3s ease;
+}
+
+
+.professional-card .btn-primary:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+
+.main-card{
+  background: linear-gradient(135deg, #2602c7 0%, #ec0bda 100%);
+  max-width: 540px;
+  color: black;
+}

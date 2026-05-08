@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+        <script src="./jquery.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#btnSubmit").click(function(){
+                    
+                    // First name empty validation
+
+                    if($("#fname").val()==""){
+                        alert("Please enter your first name!");
+                        $("#fname").focus();
+                        return false;
+                    }
+
+                    // First name Length validation
+
+                    if($("#fname").val().length<3){
+                        alert("First name must have upto minimum 3 characters!");
+                        return false;
+                    }
+
+                    // first name numeric validation
+
+                    if($.isNumeric($("#fname").val())){
+                        alert("Please enter Alphanumeric or alphabatic first name!");
+                        $("#fname").val('');
+                        $("#fname").focus();
+                        return false;
+                    }
+
+                    // last name empty validation
+
+                    if($("#lname").val()==""){
+                        alert("Please enter your last name!");
+                        return false;
+                    }
+
+                    // First name Length validation
+
+                    if($("#lname").val().length<3){
+                        alert("Last name must have upto minimum 3 characters!");
+                        return false;
+                    }
+
+                    // Last name numeric validation
+
+                    if($.isNumeric($("#lname").val())){
+                        alert("Please enter Alphanumeric or alphabatic last name!");
+                        return false;
+                    }
+
+                    // DOB
+
+                    if($('#dob').val()==""){
+                        alert("Please Enter Your DOB...!");
+                        return false;
+                    }
+
+                    // Gender
+
+                    if($('#male').prop('checked') ==false && $('#female').prop('checked') ==false){
+                        alert("Please Select your gender!");
+                        return false;
+                    }
+
+                    // Qualification
+
+                    if(!($('#bca').prop('checked') || $('#mca').prop('checked') 
+                || $('#pgdca').prop('checked') || $('#phd').prop('checked'))){
+                        alert("Please Select your Qualification!");
+                        return false;
+                    }
+
+                    if($('#cat').val()==""){
+                        alert("Please Select your category!");
+                        return false;
+                    }
+
+                    //  category
+
+                    if($('#abt').val()==""){
+                        alert("Please Enter About You...!");
+                    }
+
+                    // Image
+
+                    if($('#imgupd').val()==""){
+                        alert("Please Upload Your Image...!");
+                        return false;
+                    }
+
+                if(($('#email').val().indexOf('.')-$('#email').val().indexOf('@'))<2){
+                    alert("Please Enter Valid Email...!");
+                    return false;
+                }
+
+                if(!($('#pass').val().match('[a-z]'))){
+                    alert("Password must contain atleast a single lowercase alphabet...!");
+                    return false;
+                }
+
+                if(!($('#pass').val().match('[A-Z]'))){
+                    alert("Password must contain atleast a single uppercase alphabet...!");
+                    return false;
+                }
+
+                if(!($('#pass').val().match('[0-9]'))){
+                    alert("Password must contain atleast a single digit...!");
+                    return false;
+                }
+
+                if(!($('#pass').val().match('[@#$%^]'))){
+                    alert("Password must contain atleast a single special symbol...!");
+                    return false;
+                }
+
+                if($('#pass').val().length<8){
+                    alert("Password length must be upto 8 characters...!");
+                    return false;
+                }
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <th colspan="2">Registration Form</th>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" id="fname"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" id="lname"/>
+                </td>
+            </tr>
+            <tr>
+                <td>DOB</td>
+                <td>
+                    <input type="date" id="dob">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="text" id="pass">
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" id="male"/>male
+                    <input type="radio" name="gender" id="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td>
+                    <input type="checkbox" value="bca" id="bca"/>BCA
+                    <input type="checkbox" value="mca" id="mca">MCA
+                    <input type="checkbox" value="pgdca" id="pgdca">PGDCA
+                    <input type="checkbox" value="phd" id="phd">PHD
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    <select id="cat">
+                        <option value="">Select</option>
+                        <option value="general">General</option>
+                        <option value="obc">OBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                        <option value="ews">EWS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>About You</td>
+                <td>
+                    <textarea id="abt" cols="25" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload Image</td>
+                <td>
+                    <input type="file" id="imgupd">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td >
+                    <input type="submit" value="Register" id="btnSubmit">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
