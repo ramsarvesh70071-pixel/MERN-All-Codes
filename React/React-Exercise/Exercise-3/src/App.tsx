@@ -36,23 +36,19 @@ function App() {
 
       <div className="d-flex justify-content-start p-3">
         <button
-          className="btn btn-outline-light border-0 pt-0 pb-0 "
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#Sidebar"
-          style={{ fontSize: '24px' }}
-        >
+          className="btn btn-outline-light border-0 pt-0 pb-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#Sidebar" style={{ fontSize: '24px' }} >
          <i className="bi bi-list " style={{ fontSize: '30px' }}></i>
         </button>
       </div>
       <div className="offcanvas offcanvas-start bg-light text-dark" style={{ transition: 'transform 0.4s ease-in-out' }} id="Sidebar">
-        <div className="offcanvas-header border-bottom border-secondary">
+        <div className="offcanvas-header border-bottom border-dark">
           <h5 className="offcanvas-title text-success"> Menu</h5>
-          <button type="button" className="btn-close btn-close-dark fw-bold" data-bs-dismiss="offcanvas"></button>
+          <button type="button" className="btn-close btn-close-dark" data-bs-dismiss="offcanvas"></button>
         </div>
         <div className="offcanvas-body text-start">
           <ul className="list-unstyled fs-5">
             <li className="mb-3">Recent Activity</li>
+            <li className="mb-3">Cart</li>
             <li className="mb-3">Settings</li>
           </ul>
         </div>
@@ -82,7 +78,7 @@ function Search(props) {
 
           <div className="input-group mb-3 shadow-sm" style={{ borderRadius: '25px', overflow: 'hidden', border: '1px solid #dfe1e5' }}>
             <span className="input-group-text bg-white border-0 ps-3">
-              <i className="bi bi-search text-muted fw-bold"></i>
+              <i className="bi bi-search text-muted"></i>
             </span>
 
             <input
@@ -123,7 +119,7 @@ const List = (props) => {
       </div>
     );
   } else {
-    return (<div className="alert alert-danger text-center fw-bold">Data Not Found...</div>);
+    return (<div className="alert alert-info text-center">Data Not found ...</div>);
   }
 };
 
@@ -149,7 +145,7 @@ function Item({ title, image, price, category, description, rating }) {
         <div className=" d-flex  flex-grow-1 professional-card mt-0 p-0">
           <div className="card-body ">
           <p className="card-text mb-0"><strong style={{ color: 'gold', margin: '10px' }}>Price:</strong> <span className=" fw-bold" style={{ color: 'greenyellow', fontSize: '25px' }}>${price ?? "Unknown"}</span> <span className="text-white  m-1 fs-2"> , </span><span className="card-text mb-0" ><strong style={{ color: 'gold', margin: '10px' }}>Category:</strong> <span style={{ textTransform: "capitalize", color: 'black' }}> {category ?? "Unknown"}</span></span></p>
-          <p className="card-text mb-1  text-info"><small className="fw-bold">⭐ {rating.rate} ({rating.count})</small><span className="text-white  m-1 fs-2">,</span> <span className="card-text fw-bold"><strong style={{ color: 'gold', margin: '10px' }}> Pices Count:</strong> <span>{rating.count ?? "Unknown"}</span></span></p>
+          <p className="card-text mb-1 fw-bold text-info"><small>⭐ {rating.rate} ({rating.count})</small> <span className="card-text"><strong style={{ color: 'gold', margin: '10px' }}><span></span> Pices Count:</strong> <span>{rating.count ?? "Unknown"}</span></span></p>
          
           <p className="card-text mb-0"><strong style={{ color: 'gold', margin: '10px' }}>Description:</strong> <small className="text-white fst-italic">{description ?? "Unknown"}</small></p>
             <button className="text-dark btn btn-primary fw-bold w-50 mt-2 professional-card " style={{ background: 'linear-gradient(135deg, #e0dc11 0%, #10e709 100%)' }}>Add To Cart</button>
